@@ -154,4 +154,4 @@ Configuring a Linux server to host a web app securely using flask application on
 ### Step 16 : Restart Apache 
   - `sudo service apache2 restart`
   
-17. Visit site at [http://52.221.231.17/](http://ec2-52-221-231-17.ap-southeast-1.compute.amazonaws.com/)
+17. Visit site at [Catalog App] (http://ec2-52-221-231-17.ap-southeast-1.compute.amazonaws.com/)
