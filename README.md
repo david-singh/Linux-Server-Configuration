@@ -149,8 +149,6 @@ Configuring a Linux server to host a web app securely using flask application on
   `engine = create_engine('postgresql://catalog:password@localhost/catalog')`
   - Run `sudo python database_setup.py`
   
-  ```
-  
 ### Step 16 : Restart Apache 
   - `sudo service apache2 restart`
   
