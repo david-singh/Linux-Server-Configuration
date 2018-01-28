@@ -8,6 +8,8 @@ Configuring a Linux server to host a web app securely using flask application on
 
 - Application URL: http://ec2-52-221-231-17.ap-southeast-1.compute.amazonaws.com/
 
+-Login with: `ssh -i ~/.ssh/udacity_key.pem -p 2200 grader@52.221.231.17`
+
 ## Configuration Steps:
 ### Step 1 : Create new user named grader and give it the permission to sudo
 
