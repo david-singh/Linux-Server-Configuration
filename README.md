@@ -2,9 +2,9 @@
 
 Configuring a Linux server to host a web app securely using flask application on to AWS Light Sail. Installation of a Linux distribution on a virtual machine and prepare it to host web application(Item Catalog). It includes installing updates, securing it from a number of attack vectors and installing/configuring web and database servers.
 
-- IP address: ~~52.221.231.17
+- IP address: ~~52.221.231.17~~
 
-- Accessible SSH port: ~~2200
+- Accessible SSH port: ~~2200~~
 
 - Application URL: http://ec2-52-221-231-17.ap-southeast-1.compute.amazonaws.com/
 
