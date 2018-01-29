@@ -2,18 +2,18 @@
 
 Configuring a Linux server to host a web app securely using flask application on to AWS Light Sail. Installation of a Linux distribution on a virtual machine and prepare it to host web application(Item Catalog). It includes installing updates, securing it from a number of attack vectors and installing/configuring web and database servers.
 
-- IP address: ~~52.221.231.17~~
+- IP address: ~~13.250.18.177~~
 
 - Accessible SSH port: ~~2200~~
 
-- Application URL: http://ec2-52-221-231-17.ap-southeast-1.compute.amazonaws.com/
+- Application URL: http://ec2-13-250-18-177.ap-southeast-1.compute.amazonaws.com
 
--Login with: `ssh -i ~/.ssh/udacity_key.pem -p 2200 grader@52.221.231.17`
+-Login with: `ssh -i ~/.ssh/udacity_key.rsa -p 2200 grader@13.250.18.177`
 
 ## Configuration Steps:
 ### Step 1 : Create new user named grader and give it the permission to sudo
 
-  - SSH into the server through `ssh -i ~/.ssh/udacity_key.pem unbuntu@52.221.231.17`
+  - SSH into the server through `ssh -i ~/.ssh/udacity_key.rsa unbuntu@13.250.18.177`
   - Run `$ sudo adduser grader` to create a new user named grader
   - Create a new file in the sudoers directory with `sudo nano /etc/sudoers.d/grader`
   - Add the following text `grader ALL=(ALL:ALL) ALL`
@@ -26,7 +26,7 @@ Configuring a Linux server to host a web app securely using flask application on
 ### Step 3 : Change SSH port from 22 to 2200
   - Run `sudo nano /etc/ssh/sshd_config`
   - Change the port from 22 to 2200
-  - Confirm by running `ssh -i ~/.ssh/udacity_key.pem -p 2200 unbuntu@52.221.231.17`
+  - Confirm by running `ssh -i ~/.ssh/udacity_key.rsa -p 2200 unbuntu@13.250.18.177`
   
 ### Step 4 : Configure the Uncomplicated Firewall (UFW) to only allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123)
   - `sudo ufw allow 2200/tcp`
@@ -42,9 +42,9 @@ Configuring a Linux server to host a web app securely using flask application on
   - Save keygen file into (/home/user/.ssh/keypair).and fill the password . 2 keys will be generated,  public key (keypair.pub) and       identification key(keypair).
   - Login into grader account using `sudo login grader`.  type the password that you have fill during user creation
     (`sudo adduser grader` step 3) .
-    `grader@52.221.231.17 password :`
+    `grader@13.250.18.177 password :`
   - if the password is correct , you will login as grader account:
-     `grader@52.221.231.17:~$`
+     `grader@13.250.18.177:~$`
   - make a directory in grader account : `mkdir .ssh`
   - make a authorized_keys file using `touch .ssh/authorized_keys`
   - from your local machine,copy the contents of public key(keypair.pub).
@@ -52,7 +52,7 @@ Configuring a Linux server to host a web app securely using flask application on
   - give the permissions : `chmod 700 .ssh`    and `chmod 644 .ssh/authorized_keys`.
   - do `nano /etc/ssh/sshd_config` , change `PasswordAuthentication` to  no .
   - `sudo service ssh restart`.
-  -  `ssh grader@52.221.231.17 -p 2200 -i ~/.ssh/keypair` in new terminal .A pop-up window will open for authentication. just fill the      password that    you have fill during ssh-keygen creation.
+  -  `ssh grader@13.250.18.177 -p 2200 -i ~/.ssh/keypair` in new terminal .A pop-up window will open for authentication. just fill the      password that    you have fill during ssh-keygen creation.
 
   **Resources -** [initial server setup](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04),      [udacity course videos](https://classroom.udacity.com/nanodegrees/nd004/parts/00413454014/modules/357367901175461/lessons/4331066009/concepts/48010894750923#)
 
@@ -60,7 +60,7 @@ Configuring a Linux server to host a web app securely using flask application on
   - Run `sudo nano /etc/ssh/sshd_config`
   - Change `PermitRootLogin without-password` line to `PermitRootLogin no`
   - Restart ssh with `sudo service ssh restart`
-  - Now you are only able to login using `ssh -i ~/.ssh/udacity_key.pem -p 2200 grader@52.221.231.17`
+  - Now you are only able to login using `ssh -i ~/.ssh/udacity_key.rsa -p 2200 grader@13.250.18.177`
  
 ### Step 8 : Install Apache
   - `sudo apt-get install apache2`
