@@ -88,7 +88,7 @@ Configuring a Linux server to host a web app securely using flask application on
   from catalog import app as application
   application.secret_key = 'supersecretkey'
   ```
-  - Rename application.py to __init__.py `mv application.py __init__.py`
+  - Rename application.py to __init__.py `mv catalog.py __init__.py`
   
 ### Step 11 : Install virtual environment
   - Install the virtual environment `sudo pip install virtualenv`
@@ -110,9 +110,9 @@ Configuring a Linux server to host a web app securely using flask application on
   - Paste this code: 
   ```
   <VirtualHost *:80>
-      ServerName 52.221.231.17
-      ServerAlias http://ec2-52-221-231-17.ap-southeast-1.compute.amazonaws.com
-      ServerAdmin admin@52.221.231.17
+      ServerName 13.250.18.177
+      ServerAlias http://ec2-13-250-18-177.ap-southeast-1.compute.amazonaws.com
+      ServerAdmin admin@13.250.18.177
       WSGIDaemonProcess catalog python-path=/var/www/catalog:/var/www/catalog/venv/lib/python2.7/site-packages
       WSGIProcessGroup catalog
       WSGIScriptAlias / /var/www/catalog/catalog.wsgi
@@ -152,4 +152,4 @@ Configuring a Linux server to host a web app securely using flask application on
 ### Step 16 : Restart Apache 
   - `sudo service apache2 restart`
   
-### Step 17 : Visit site at [Catalog App](http://ec2-52-221-231-17.ap-southeast-1.compute.amazonaws.com/)
+### Step 17 : Visit site at [Catalog App](http://ec2-13-250-18-177.ap-southeast-1.compute.amazonaws.com)
